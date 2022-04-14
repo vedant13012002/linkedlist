@@ -1,0 +1,92 @@
+public class LL {
+    private Node Head;
+    private Node newNode;
+
+    class Node{
+        String data;
+        Node next;
+        Node(String data ){
+            this . data = data;
+            this . next = null;
+
+        }
+
+    }
+    public void addFirst(String data){
+        Node newNode = new Node(data);
+        if(Head == null ){
+            Head = newNode;
+            return ;
+
+        }
+        // if head is not null
+        newNode.next=null;
+        Head = newNode;
+
+    }
+    public void addLast(String data){
+        if(Head == null){
+
+            Head = newNode;
+            return;
+        }
+        // if head is not null
+        Node currNode = Head;
+        while(currNode.next != null) {
+            currNode = currNode.next;
+        }
+        currNode.next= newNode;
+
+    }
+    public void deleteFirst(){
+        if(Head==null) {
+            System.out.println("the list is empty");
+            return;
+        }
+        // if head is not null
+        Head = Head.next;
+
+    }
+    public void deletelast() {
+        if (Head == null) {
+            System.out.println("this list is empty");
+            return;
+        }
+        if (Head == null) {
+            Head = null;
+            return;
+        }
+        Node secondLast = Head;
+        Node lastNode = Head.next;
+        while (lastNode.next != null){
+            lastNode= lastNode.next;
+            secondLast = secondLast.next;
+
+        }
+
+    }
+    private void printList(){
+
+    }
+    public static void main(String[] args) {
+        LL list = new LL();
+        list.addFirst("a");
+        list.addFirst("is");
+        list.printList();
+
+        list.addLast("list");
+        list.printList();
+
+        list.addFirst("this");
+        list.printList();
+
+        list.deleteFirst();
+        list.printList();
+
+       // list.deleteLast();
+        //list.printList();
+    }
+
+   // private void printList() {
+    }
+
